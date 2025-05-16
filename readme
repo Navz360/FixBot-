@@ -1,0 +1,115 @@
+# 🤖 FIXBOT – AI-Powered Machine & PC Troubleshooting Chatbot
+
+FIXBOT is an intelligent assistant for diagnosing and resolving issues related to CNC machines and PCs. It uses NLP for understanding user input, a local dataset for fast answers, OpenAI for fallback intelligence, and SerpAPI to search Google if all else fails.
+
+---
+
+## 🚀 Features
+
+- 🧠 NLP understanding (via spaCy)
+- 🔤 Auto-corrects spelling errors
+- 🗃️ JSON-based local Q&A dataset
+- 🤖 Optional OpenAI GPT fallback
+- 🌐 Google fallback using SerpAPI
+- 🌍 CORS support (ready for React frontend)
+- 🧩 Modular, extensible Flask backend
+
+---
+
+## 📦 Tech Stack
+
+- **Backend:** Python, Flask, spaCy, OpenAI, SerpAPI
+- **Frontend (optional):** React.js or any other
+- **NLP:** spaCy `en_core_web_sm`
+- **External API:** OpenAI & SerpAPI
+
+---
+
+## 🛠️ Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/fixbot.git
+cd fixbot
+2. Install dependencies
+bash
+Copy
+Edit
+pip install -r requirements.txt
+python -m spacy download en_core_web_sm
+3. Create .env file
+env
+Copy
+Edit
+OPENAI_API_KEY=sk-your-openai-api-key
+SERP_API_KEY=your-serpapi-key
+4. Run the Flask backend
+bash
+Copy
+Edit
+python app.py
+🧠 Dataset Format
+The dataset is stored in dataset.json:
+
+json
+Copy
+Edit
+[
+  {
+    "question": "how to reset cnc machine",
+    "answer": "To reset a CNC machine, power off, wait 10 seconds, and restart. Ensure all emergency stops are released."
+  },
+  {
+    "question": "pc not turning on",
+    "answer": "Check power supply, cables, and motherboard connections. Try with a different power socket."
+  }
+]
+🔗 API Usage
+POST /chat
+Request:
+
+json
+Copy
+Edit
+{
+  "message": "how to restart my cnc controller"
+}
+Response:
+
+json
+Copy
+Edit
+{
+  "response": "To reset a CNC machine, power off, wait 10 seconds, and restart..."
+}
+📸 Screenshots
+🏠 Home Page
+
+🧠 Dataset Match
+
+🤖 OpenAI Fallback
+
+🌐 SerpAPI Google Fallback
+
+📱 Mobile Responsive UI
+
+🌐 Deployment Options
+You can deploy this on:
+
+Render (Free tier)
+
+Railway
+
+Docker + NGINX (advanced)
+
+Self-hosted VM
+
+🙌 Contributing
+Pull requests welcome! Please open an issue first for major changes.
+
+🛡️ License
+MIT License – use it freely for personal or commercial use.
+
+💬 Need Help?
+Open an issue or email your.email@example.com.
